@@ -16,3 +16,4 @@ Imports:
     RCurl,
     stringr,
     XML
+Suggests: testthat
