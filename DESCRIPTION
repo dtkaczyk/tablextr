@@ -12,3 +12,7 @@ Description: Tablextr is a package for smart table extraction from HTML pages.
     can be performed.
 License: MIT + file LICENSE
 LazyData: TRUE
+Imports:
+    RCurl,
+    stringr,
+    XML
