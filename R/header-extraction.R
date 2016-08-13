@@ -1,4 +1,15 @@
-
+#' Set column names
+#'
+#' The function sets column names in a data frame using data from the first rows.
+#'
+#' @param data A data frame.
+#' @param headerCount How many rows use as headers.
+#' @return A data frame with the first \code{headerCount} rows turned into
+#' column names.
+#' @examples
+#' setHeaders(data)
+#' setHeaders(data, headerCount = 2)
+#' @export
 setHeaders <- function(data, headerCount = 1) {
     row.names(data) <- NULL
     if (headerCount > 0) {
@@ -11,6 +22,17 @@ setHeaders <- function(data, headerCount = 1) {
     data
 }
 
+#' Guess header count
+#'
+#' The function uses XML tags to guess how many table rows form the table headers.
+#'
+#' @param table A table XML node.
+#' @param rowTag Table row XML tag(s).
+#' @param cellTag Table cell XML tag(s).
+#' @return The number of the first rows that represent the \code{table} header.
+#' @examples
+#' findHeaderCount(table)
+#' @export
 findHeaderCount <- function(table, rowTag = "tr", cellTag = c("th", "td")) {
     rows <- getNodes(table, children = rowTag)
     rowStyles <- lapply(rows, rowToStyleHash, cellTag = cellTag)
