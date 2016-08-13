@@ -1,0 +1,14 @@
+Package: tablextr
+Type: Package
+Title: Smart Table Extraction from HTML
+Version: 0.1
+Date: 2016-08-13
+Author: Dominika Tkaczyk
+Maintainer: Dominika Tkaczyk <d.tkaczyk@gmail.com>
+Description: Tablextr is a package for smart table extraction from HTML pages.
+    It is able to parse a web page and extract data from <table> tags into a
+    data frame. Additionally data cleaning, merging table with the same
+    structure, assigning column headers and even extracting data from subpages
+    can be performed.
+License: MIT + file LICENSE
+LazyData: TRUE
