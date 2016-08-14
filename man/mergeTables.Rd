@@ -16,7 +16,4 @@ frames from \code{tables} or a union of the original data frames.
 \description{
 The function merges data frames based on column names.
 }
-\examples{
-mergeTables(tables)
-}
 

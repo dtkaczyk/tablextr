@@ -8,9 +8,6 @@
 #' @param rowTag Table row XML tag(s).
 #' @param cellTag Table cell XML tag(s).
 #' @return A data frame containing the data from the original XML node.
-#' @examples
-#' tableToDataFrame(table)
-#' tableToDataFrame(table, findHeaders = FALSE)
 #' @export
 tableToDataFrame <- function(table, findHeaders = TRUE, rowTag = "tr",
                              cellTag = c("th", "td")) {

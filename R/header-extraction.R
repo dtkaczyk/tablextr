@@ -7,8 +7,9 @@
 #' @return A data frame with the first \code{headerCount} rows turned into
 #' column names.
 #' @examples
-#' setHeaders(data)
-#' setHeaders(data, headerCount = 2)
+#' df <- data.frame(letters[1:5], as.character(seq(7, 11)), letters[13:17])
+#' dfWithColnames <- setHeaders(df)
+#' dfWithColnames <- setHeaders(df, headerCount = 2)
 #' @export
 setHeaders <- function(data, headerCount = 1) {
     row.names(data) <- NULL
@@ -30,8 +31,6 @@ setHeaders <- function(data, headerCount = 1) {
 #' @param rowTag Table row XML tag(s).
 #' @param cellTag Table cell XML tag(s).
 #' @return The number of the first rows that represent the \code{table} header.
-#' @examples
-#' findHeaderCount(table)
 #' @export
 findHeaderCount <- function(table, rowTag = "tr", cellTag = c("th", "td")) {
     rows <- getNodes(table, children = rowTag)

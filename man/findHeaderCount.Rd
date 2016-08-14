@@ -19,7 +19,4 @@ The number of the first rows that represent the \code{table} header.
 \description{
 The function uses XML tags to guess how many table rows form the table headers.
 }
-\examples{
-findHeaderCount(table)
-}
 

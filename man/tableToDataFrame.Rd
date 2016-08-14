@@ -23,8 +23,4 @@ A data frame containing the data from the original XML node.
 \description{
 The function converts "table" XML node to a data frame.
 }
-\examples{
-tableToDataFrame(table)
-tableToDataFrame(table, findHeaders = FALSE)
-}
 

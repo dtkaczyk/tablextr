@@ -19,7 +19,8 @@ column names.
 The function sets column names in a data frame using data from the first rows.
 }
 \examples{
-setHeaders(data)
-setHeaders(data, headerCount = 2)
+df <- data.frame(letters[1:5], as.character(seq(7, 11)), letters[13:17])
+dfWithColnames <- setHeaders(df)
+dfWithColnames <- setHeaders(df, headerCount = 2)
 }
 

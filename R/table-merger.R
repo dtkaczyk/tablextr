@@ -5,18 +5,15 @@
 #' @param tables A list of data frames.
 #' @return A list of data frames, each of which is one of the original data
 #' frames from \code{tables} or a union of the original data frames.
-#' @examples
-#' mergeTables(tables)
 #' @export
 mergeTables <- function(tables) {
     tableNames <- table(sapply(tables, getTableHash))
+    origs <- list()
     merged <- list()
-    i <- 1
     for (table in tables) {
         tableHash <- getTableHash(table)
         if (colnames(table)[1] == "V1" | tableNames[[tableHash]] < 5) {
-            merged[[paste0("table", i)]] <- table
-            i <- i + 1
+            origs[[paste0("table", (length(origs) + 1))]] <- table
         } else if (tableHash %in% names(merged)) {
             merged[[tableHash]] <- rbind(merged[[tableHash]], table)
             row.names(merged[[tableHash]]) <- NULL
@@ -24,7 +21,7 @@ mergeTables <- function(tables) {
             merged[[tableHash]] <- table
         }
     }
-    merged
+    c(merged, origs)
 }
 
 getTableHash <- function(table) {
