@@ -2,3 +2,4 @@
 
 export(findHeaderCount)
 export(setHeaders)
+export(tableToDataFrame)
